@@ -1,0 +1,188 @@
+:root {
+  --primary: #8a6f4e;   /* 上品なブラウンベージュ */
+  --bg: #faf8f4;        /* 温かみのある白 */
+  --paper: #f2ede4;     /* ベージュ寄りのカード背景 */
+  --text: #2b2b2b;      /* 真っ黒を避けた濃いグレー */
+  --muted: #7a746b;     /* くすみベージュグレー */
+  --border: #e0d8cc;    /* やさしい境界線 */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Serif JP", "Hiragino Mincho ProN", serif;
+  line-height: 1.75;
+  color: var(--text);
+  background: var(--bg);
+  max-width: 920px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+h1, h2, h3 {
+  line-height: 1.3;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.small {
+  font-size: 12px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* ヘッダー */
+.site-header {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--paper);
+}
+
+.tagline {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+
+.nav {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ヒーロー */
+.hero {
+  margin-top: 16px;
+  padding: 20px;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+/* ボタン */
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 16px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 999px;
+  font-size: 14px;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* セクション */
+.section {
+  margin-top: 20px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: #fff;
+}
+
+.lead {
+  font-size: 16px;
+}
+
+/* 2カラム（自己紹介） */
+.two-col {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.profile-box {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.profile {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+
+/* 制作物（カード） */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.card {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.link {
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+/* スキル（チップ） */
+.chips {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.chips li {
+  border: 1px solid var(--border);
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--paper);
+  font-size: 13px;
+}
+
+/* フッター */
+.site-footer {
+  margin: 18px 0 30px;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* スマホ対応 */
+@media (max-width: 720px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
